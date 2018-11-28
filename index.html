@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="skeleton application-web responsive">
+    <head>
+        <title>Wallboard</title>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- styles -->
+        <link href="assets/styles/style.css" rel="stylesheet" />
+    </head>
+    <body>
+         
+        <!-- app view -->
+        <div id="app" class="t-app v-app">
+
+            <div class="m-tiles m-tiles-row">
+                <div class="col-25" id="data-waiting-now">
+                    <div>
+                        <div class="title">WAITING NOW</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-longest-wait-now">
+                    <div>
+                        <div class="title">LONGEST WAIT NOW</div>
+                        <div class="data"></div>
+                        <div id="data-longest-wait-now-progress" class="m-progress"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-answered-now">
+                    <div>
+                        <div class="title">ANSWERED NOW</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-overflowed-off">
+                    <div>
+                        <div class="title">OVERFLOWED OFF</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-tiles m-tiles-row">
+                <div class="col-25" id="data-inbound-abandoned">
+                    <div>
+                        <div class="title">INBOUND ABANDONED</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-inbound-answered">
+                    <div>
+                        <div class="title">INBOUND ANSWERED</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-inbound-calls">
+                    <div>
+                        <div class="title">INBOUND CALLS</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-percentage-service-level">
+                    <div>
+                        <div class="title">% SERVICE LEVEL</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-tiles m-tiles-row">
+                <div class="col-25 col-paired" id="data-outbound-answered">
+                    <div>
+                        <div class="title">OUTBOUND ANSWERED</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-outbound-calls">
+                    <div>
+                        <div class="title">OUTBOUND CALLS</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25 col-paired" id="data-total-talk-time">
+                    <div>
+                        <div class="title">TOTAL TALK TIME</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="col-25" id="data-avg-talk-time">
+                    <div>
+                        <div class="title">AVG TALK TIME</div>
+                        <div class="data"></div>
+                        <img class="m-button" src="assets/images/settings.png" id="settingsbuttonclose" />
+                        <img class="m-button" src="assets/images/settings.png" id="settingsbuttonopen" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- admin view -->
+        <div class="v-admin" id="adminscreen">
+            <h1>ADMIN SCREEN</h1>
+        </div>  
+
+
+        <!-- scripts -->
+        <script src="assets/libraries/jquery/jquery-2.2.3.min.js"></script>
+        <script src="assets/data/data.js"></script>
+        <script src="assets/scripts/main.js"></script>
+
+        <!-- app -->
+        <script>
+            $(document).ready(function() {
+
+                // Declarations
+                var timeIndex = 0;
+                var callIndex = 0;
+
+                // Init
+                timeloop(timeIndex);
+                callloop(callIndex);
+
+                // Interval for time
+                var timeHeartbeat = setInterval(function(){ 
+
+                    timeIndex = timeIndex + 1;
+                    if(timeIndex > 60){
+                        clearInterval(timeHeartbeat);
+                        clearInterval(callHeartbeat);
+                    }
+
+                    timeloop(timeIndex);
+
+                }, 1000);
+
+                // Interval for call stats
+                var callHeartbeat = setInterval(function(){ 
+                    callIndex = callIndex + 1;
+                    callloop(callIndex);
+                }, 5000);
+
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,77 @@
+// --------------------------------------------------------------------------------
+// BASE - VARIABLES 
+// --------------------------------------------------------------------------------
+
+// COLORS
+// --------------------------------------------------------------------------------
+$color-white: 								#fff;
+$color-white-opaque: 					 	rgba(0,0,0,0.75);
+
+$color-black: 								#000;
+
+$color-gray-mine-shaft:						#3E3E3E;
+$color-gray-dove:							#686868;
+
+$color-green-limeade:						#33A301;
+$color-red-guardsman:						#D60000;
+$color-blue-bright-turquoise:				#01C5F7;
+
+
+$color-app-background: 						$color-gray-mine-shaft;
+$color-good:								$color-green-limeade;
+$color-bad:									$color-red-guardsman;
+$color-secondary:							$color-blue-bright-turquoise;
+$color-tertiary:							$color-gray-dove;
+$color-border:								$color-gray-mine-shaft;
+
+
+// FONTS
+// --------------------------------------------------------------------------------
+$font-family-lato-light:                    'lato-light', sans-serif;
+$font-family-lato-regular:                  'lato-regular', sans-serif;
+$font-family-lato-bold:                     'lato-bold', sans-serif;
+
+$font-family-oswald-light:                  'oswald-light', sans-serif;
+$font-family-oswald-regular:                'oswald-regular', sans-serif;
+$font-family-oswald-bold:                   'oswald-bold', sans-serif;
+
+$font-weight-light:                         300;
+$font-weight-regular:                       400;
+$font-weight-bold:                          700;
+
+$font-size-title:							1.9vw;
+$font-size-data:							6vw;
+$font-size-16px:                            1.000em;
+
+
+// LAYOUT
+// --------------------------------------------------------------------------------
+$l-animation-time:                      	1.0s;
+$l-border-radius:                       	5px;
+$l-font-size:                           	$font-size-16px;
+
+$l-padding-xs:								5px;
+$l-padding-s:								10px;
+$l-padding-l:								40px;
+$l-padding-m:								20px;
+
+
+// BREAKPOINTS
+// --------------------------------------------------------------------------------
+$breakpoint-min-tablet-portrait:            768px;
+$breakpoint-min-tablet-landscape:           1024px;
+$breakpoint-min-desktop:                    1200px;
+
+$breakpoint-mobile:                         'screen and (max-width: 767px)';
+
+$breakpoint-tablet-portrait-below:          'screen and (max-width: 767px)';
+$breakpoint-tablet-portrait-min:            'screen and (min-width: 768px)';
+$breakpoint-tablet-portrait-max:            'screen and (max-width: 768px)';
+$breakpoint-tablet-portrait-above:          'screen and (min-width: 769px)';
+
+$breakpoint-tablet-landscape-below:         'screen and (max-width: 1023px)';
+$breakpoint-tablet-landscape-min:           'screen and (min-width: 1024px)';
+$breakpoint-tablet-landscape-max:           'screen and (max-width: 1024px)';
+$breakpoint-tablet-landscape-above:         'screen and (min-width: 1025px)';
+
+$breakpoint-desktop:                        'screen and (min-width: 1200px)';

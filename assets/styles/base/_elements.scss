@@ -1,0 +1,39 @@
+// --------------------------------------------------------------------------------
+// BASE - ELEMENTS
+//---------------------------------------------------------------------------------
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    //box-sizing: content-box;
+    
+    -webkit-font-smoothing: antialiased; 
+    -webkit-tap-highlight-color: $color-white;
+    -webkit-text-size-adjust: none; 
+    
+    // Hightligt color
+    //::selection {
+    //    background: $color-primary;
+    //    text-shadow: none;
+    //}
+}
+
+html,
+body {
+    color: $color-white;
+    font-family: $font-family-oswald-bold;
+    font-size: $font-size-16px;
+    font-weight: $font-weight-light;
+    margin: 0;
+    
+    min-width: 320px;
+    
+     overflow:hidden;
+    // overflow: auto;
+    // overflow-x: hidden;
+    
+    padding: 0;
+    width: 100%;
+}

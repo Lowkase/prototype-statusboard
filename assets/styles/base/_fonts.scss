@@ -1,0 +1,11 @@
+// --------------------------------------------------------------------------------
+// BASE - FONTS
+//---------------------------------------------------------------------------------
+@charset "UTF-8";
+
+@include font-loader('lato-light', '../fonts/lato/lato-light-webfont');
+@include font-loader('lato-regular', '../fonts/lato/lato-regular-webfont');
+@include font-loader('lato-bold', '../fonts/lato/lato-bold-webfont');
+@include font-loader('oswald-light', '../fonts/oswald/oswald-light-webfont');
+@include font-loader('oswald-regular', '../fonts/oswald/oswald-regular-webfont');
+@include font-loader('oswald-bold', '../fonts/oswald/oswald-bold-webfont');

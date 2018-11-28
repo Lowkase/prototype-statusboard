@@ -1,0 +1,161 @@
+// --------------------------------------------------------------------------------
+// MODULES - TILES
+// --------------------------------------------------------------------------------
+.m-tiles {
+	
+	// Rows
+	&.m-tiles-row {
+		clear: both;
+		height: 33.33333%;
+		margin: 0;
+		padding: 0;
+		zoom: 1;
+	}
+	&.m-tiles-row:before, &.m-tiles-row:after {
+		content: "";
+		display: table;	
+	}
+	&.m-tiles-row:after {
+		clear: both;
+	}
+	&.m-tiles-row:last-child > div {
+		padding-bottom: 10px;
+	}
+
+
+
+
+	// Coloumns
+	> div {
+		background: $color-app-background;
+		display: block;
+		float: left;
+		height: 100%;
+		padding-top: 10px;
+		padding-right: 10px;
+		position: relative;
+		text-align: center;	
+	}
+
+	> div:first-child { 
+		padding-left: 10px;
+	}
+
+
+
+
+	// Column Sizes
+	.col-25 {
+		width: 25%;
+	}
+	.col-50 {
+		width: 50%;
+	}
+	.col-75 {
+		width: 75%;
+	}
+	.col-100 {
+		width: 100%;
+	}
+	.col-paired {
+		padding-right:0;
+	}
+
+
+
+
+	// Column Content
+	> div > div { 
+		height: 100%;
+		padding: 10px;
+		zoom: 1;
+
+		@include transition();			
+	}
+	> div > div:before, > div > div:after 
+	{ 
+		content: ""; 
+		display: table; 
+	}
+	> div > div:after 
+	{ 
+		clear: both;
+	}
+
+	.title, .data {
+		position: absolute;
+		left:0;
+		height:40px;
+		width:100%;
+		z-index: 2;
+	}
+
+	.title {
+	    font-family: $font-family-lato-bold;
+	    font-size: $font-size-title;
+		top:7%;
+	}
+
+	.data {
+	    font-family: $font-family-oswald-regular;
+	    font-size: $font-size-data;		
+		top:35%;
+	}	
+
+	.data-pulse {
+ 		animation: pulse 5.0s ease-out infinite;
+	}
+
+
+
+
+	// Tile default colors
+	#data-waiting-now > div:first-child {
+		background: $color-good;
+	}
+
+	#data-longest-wait-now > div:first-child {
+		background: transparent;
+	}
+
+	#data-answered-now > div:first-child {
+		background: $color-good;
+	}
+
+	#data-overflowed-off > div:first-child {
+		background: $color-good;
+	}
+
+	#data-inbound-abandoned > div:first-child {
+		background: $color-secondary;
+	}
+
+	#data-inbound-answered > div:first-child {
+		background: $color-secondary;
+	}
+
+	#data-inbound-calls > div:first-child {
+		background: $color-secondary;
+	}
+
+	#data-percentage-service-level > div:first-child {
+		background: $color-bad;
+	}
+
+	#data-outbound-answered > div:first-child {
+		background: $color-tertiary;
+	}
+
+	#data-outbound-calls > div:first-child {
+		background: $color-tertiary;
+	}
+
+	#data-total-talk-time > div:first-child {
+		background: $color-tertiary;
+	}
+
+	#data-avg-talk-time > div:first-child {
+		background: $color-tertiary;
+	}
+
+}

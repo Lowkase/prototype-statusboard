@@ -1,0 +1,60 @@
+// --------------------------------------------------------------------------------
+// BASE - TRANSITIONS
+// --------------------------------------------------------------------------------
+@mixin transition($properties: all, $durations: $l-animation-time, $delays: 0s, $easing: ease-in) {
+    $propertiesLength: length($properties);
+    $durationsLength:  length($durations);
+    $delaysLength:     length($delays);
+    $greatestLength:   0;
+
+    @if $propertiesLength < 2 and $durationsLength < 2 and $delaysLength < 2 {
+        transition: $properties $durations $easing $delays;
+    } @else {
+        @if $propertiesLength >= $greatestLength {
+            $greatestLength: $propertiesLength;
+        }
+        @if $durationsLength >= $greatestLength {
+            $greatestLength: $durationsLength;
+        }
+        @if $delaysLength >= $greatestLength {
+            $greatestLength: $delaysLength;
+        }
+
+        $string: '';
+
+        @for $i from 1 through $greatestLength {
+            $subString: '';
+            $property: '';
+            $duration: '';
+            $delay: '';
+
+            @if $i > length($properties) {
+                $property: nth($properties, length($properties));
+            } @else {
+                $property: nth($properties, $i);
+            }
+
+            @if $i > length($durations) {
+                $duration: nth($durations, length($durations));
+            } @else {
+                $duration: nth($durations, $i);
+            }
+
+            @if $i > length($delays) {
+                $delay: nth($delays, length($delays));
+            } @else {
+                $delay: nth($delays, $i);
+            }
+
+            $subString: #{$property} #{$duration} $easing #{$delay};
+
+            $string: #{$string} #{$subString};
+
+            @if $i < $greatestLength {
+                $string: #{$string}#{','};
+            }
+        }
+
+        transition: $string;
+    }
+}
